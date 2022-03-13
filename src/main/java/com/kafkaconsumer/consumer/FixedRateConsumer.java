@@ -7,9 +7,9 @@ import org.springframework.stereotype.Service;
 
 @Service
 @Slf4j
-public class HelloKafkaConsumer {
+public class FixedRateConsumer {
 
-    @KafkaListener(topics = "t_hello")
+    @KafkaListener(topics = "t_fixedrate")
     public void consume(String message){
         System.out.println(message);
     }

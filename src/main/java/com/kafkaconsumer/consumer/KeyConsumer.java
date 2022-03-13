@@ -7,10 +7,10 @@ import org.springframework.stereotype.Service;
 
 @Service
 @Slf4j
-public class HelloKafkaConsumer {
+public class KeyConsumer {
 
     @KafkaListener(topics = "t_hello")
-    public void consume(String message){
-        System.out.println(message);
+    public void consume(ConsumerRecord<String, String> message){
+       log.info("Key : {}, Partition: {}, Message: {})", message.key(), message.partition(), message.value());
     }
 }

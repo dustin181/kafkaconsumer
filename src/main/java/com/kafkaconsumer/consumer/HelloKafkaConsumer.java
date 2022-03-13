@@ -10,4 +10,9 @@ public class HelloKafkaConsumer {
     public void consume(String message){
         System.out.println(message);
     }
+
+    @KafkaListener(topics = "t_fixedrate")
+    public void consume2(String message){
+        System.out.println(message);
+    }
 }
